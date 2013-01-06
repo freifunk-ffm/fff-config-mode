@@ -50,8 +50,8 @@ function f.handle(self, state, data)
         uci:save("fastd")
         uci:commit("fastd")
 
-      end
-      luci.http.redirect(luci.dispatcher.build_url("wizard", "meshvpn", "pubkey"))
+    end
+      luci.http.redirect(luci.dispatcher.build_url("wizard", "completed"))
     else
       nav.maybe_redirect_to_successor()
     end
