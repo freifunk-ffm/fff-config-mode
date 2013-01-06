@@ -11,10 +11,6 @@ und maximal ein Viertel der Leitung zur Verfügung stellen willst, muss als Down
 <p>Um das Freifunk-Netz nicht zu sehr auszubremsen, bitten wir darum, mindestens 1000 kbit/s im Downstream und 100 kbit/s im Upstream bereitzustellen.</p>")
 f.template = "freifunk-wizard/wizardform"
 
-meshvpn = f:field(Flag, "meshvpn", "Mesh-VPN aktivieren?")
-meshvpn.default = string.format("%d", uci:get("fastd", meshvpn_name, "enabled", "0"))
-meshvpn.rmempty = false
-
 tc = f:field(Flag, "tc", "Bandbreitenbegrenzung aktivieren?")
 tc.default = string.format("%d", uci:get_first("freifunk", "bandwidth", "enabled", "0"))
 tc.rmempty = false
