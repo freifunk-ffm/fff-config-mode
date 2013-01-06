@@ -4,16 +4,19 @@
         local predecessor, successor = nav.get()
 %>
 <%+header%>
-        <h2>Willkommen auf deinem Freifunkknoten!</h2>
-        <p>Danke, dass du Freifunk unterstützt.</p>
-        <p>Dieser Wizard hilft dir nun deinen Knoten einzurichten. Dabei führt er dich schrittweise durch die wichtigsten Punkte.</p>
+        <h2>Willkommen auf Deinem Freifunk-Node!</h2>
+        <p>Du kannst Deinen Node entweder neu einrichten oder per LuCI ein Update einspielen.<br />
+        Bitte denke daran, Deinen Node zu 
+        <a href="https://register.kbu.freifunk.net/" target="_blank" >registrieren</a>.
 
+
+        <p>Danke, dass Du Freifunk unterstützt.</p>
         <div class="actions">
 <% if successor then %>
                 <a class="btn primary" href="<%=luci.dispatcher.build_url("wizard", successor.href)%>">Knoten neu einrichten</a>
 <% end %>
 
-                <a class="btn" href="<%=luci.dispatcher.build_url("admin", "system", "flashops")%>">Firmwareupgrade einspielen</a>
+                <a class="btn" href="<%=luci.dispatcher.build_url("admin", "system", "flashops")%>">LuCI / Firmwareupgrade einspielen</a>
         </div>
 <%+footer%>
 
