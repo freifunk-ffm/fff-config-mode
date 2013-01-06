@@ -23,9 +23,6 @@ upstream.value = uci:get_first("freifunk", "bandwidth", "upstream", "0")
 function f.handle(self, state, data)
   if state == FORM_VALID then
     local stat = false
-    uci:set("fastd", meshvpn_name, "enabled", data.meshvpn)
-    uci:save("fastd")
-    uci:commit("fastd")
 
     uci:foreach("freifunk", "bandwidth", function(s)
             uci:set("freifunk", s[".name"], "upstream", data.upstream)
