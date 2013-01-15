@@ -3,11 +3,10 @@ local meshvpn_name = "mesh_vpn"
 local uci = luci.model.uci.cursor()
 local nav = require "luci.tools.freifunk-wizard.nav"
 
-local f = SimpleForm("meshvpn", "Mesh-VPN", "<p>Um deinen Freifunkknoten auch über das Internet mit dem Freifunk-Netzwerk zu verbinden, kann das Mesh-VPN aktiviert werden.\
-Dies erlaubt es, den Freifunk-Knoten zu betreiben, auch wenn es keine anderen Knoten in deiner Umgebung gibt, mit denen eine WLAN-Verbindung möglich ist.</p>\
-<p>Dabei wird zur Kommunikation ein verschlüsselter Tunnel verwendet, sodass für den Anschluss-Inhaber keinerlei Risiken entstehen.</p>\
-<p>Damit das Mesh-VPN deine Internet-Verbindung nicht unverhältnismäßig auslastet, kann die Bandbreite begrenzt werden. Wenn du zum Beispiel eine DSL-16000-Leitung hast\
-und maximal ein Viertel der Leitung zur Verfügung stellen willst, muss als Downstream-Bandbreite 4000 kbit/s eingetragen werden.</p>\
+local f = SimpleForm("meshvpn", "Mesh-VPN", "<p>Um deinen Freifunk-Node auch über das Internet mit dem Freifunk-Netzwerk zu verbinden, kann das Mesh-VPN aktiviert werden.\
+Dies erlaubt es, den Freifunk-Node zu betreiben, auch wenn es keine anderen Knoten in deiner Umgebung gibt, mit denen eine WLAN-Verbindung möglich ist.</p>\
+<p>Dabei wird zur Kommunikation ein  Tunnel verwendet, sodass für den Anschluss-Inhaber keinerlei Risiken entstehen.</p>\
+<p>Damit das Mesh-VPN deine Internet-Verbindung nicht unverhältnismäßig auslastet, kann die Bandbreite begrenzt werden. </p>\
 <p>Um das Freifunk-Netz nicht zu sehr auszubremsen, bitten wir darum, mindestens 1000 kbit/s im Downstream und 100 kbit/s im Upstream bereitzustellen.</p>")
 f.template = "freifunk-wizard/wizardform"
 
