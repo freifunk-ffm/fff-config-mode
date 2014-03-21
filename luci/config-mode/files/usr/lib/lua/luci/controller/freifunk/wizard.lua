@@ -25,6 +25,6 @@ function reboot()
   uci:save("config_mode")
   uci:commit("config_mode")
 
-  luci.os.execute("reboot -f >/dev/null 2>&1")
+  os.execute("reboot -f >/dev/null 2>&1")
 end
 
