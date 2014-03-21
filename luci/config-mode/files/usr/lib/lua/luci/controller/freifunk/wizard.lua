@@ -1,5 +1,7 @@
 module("luci.controller.freifunk.wizard", package.seeall)
 
+local os = require "os"
+
 function index()
   local uci_state = luci.model.uci.cursor_state()
   if uci_state:get_first("config_mode", "wizard", "running", "0") == "1" then
