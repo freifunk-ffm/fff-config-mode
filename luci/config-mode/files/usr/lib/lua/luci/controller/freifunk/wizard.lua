@@ -1,5 +1,7 @@
 module("luci.controller.freifunk.wizard", package.seeall)
 
+local os = require "os"
+
 function index()
   local uci_state = luci.model.uci.cursor_state()
   if uci_state:get_first("config_mode", "wizard", "running", "0") == "1" then
@@ -23,6 +25,6 @@ function reboot()
   uci:save("config_mode")
   uci:commit("config_mode")
 
-  luci.sys.reboot()
+  os.execute("reboot -f >/dev/null 2>&1")
 end
 
